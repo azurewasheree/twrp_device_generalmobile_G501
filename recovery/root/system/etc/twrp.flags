@@ -6,10 +6,8 @@
 
 # Logical Partition Images
 /system_image		emmc		/dev/block/mapper/system					flags=backup=1;display="System Image";flashimg=1
-/system_ext_image	emmc		/dev/block/mapper/system_ext					flags=backup=1;display="System EXT Image";flashimg=1
 /product_image		emmc		/dev/block/mapper/product					flags=backup=1;display="Product Image";flashimg=1
 /vendor_image		emmc		/dev/block/mapper/vendor					flags=backup=1;display="Vendor Image";flashimg=1
-/odm_image		emmc		/dev/block/mapper/odm						flags=backup=1;display="ODM Image";flashimg=1
 
 # Physical Partitions
 /recovery		emmc		/dev/block/platform/bootdevice/by-name/recovery			flags=display="Recovery";backup=1
@@ -17,14 +15,12 @@
 /cache			ext4		/dev/block/platform/bootdevice/by-name/cache			flags=display="Cache"
 /storage		f2fs		/data/media/0							flags=display="Internal Storage";backup=1;usermrf;fsflags="bind";removable
 /logo			emmc		/dev/block/platform/bootdevice/by-name/logo			flags=display="Boot Logo";backup=1
-/protect_f		emmc		/dev/block/platform/bootdevice/by-name/protect1			flags=backup=1
-/protect_s		emmc		/dev/block/platform/bootdevice/by-name/protect2			flags=backup=1
-/nvdata			emmc		/dev/block/platform/bootdevice/by-name/nvdata			flags=backup=1
-/nvcfg			emmc		/dev/block/platform/bootdevice/by-name/nvcfg			flags=backup=1
-/persist		ext4		/dev/block/platform/bootdevice/by-name/persist			flags=display="Persist"
-/persist_image		emmc		/dev/block/platform/bootdevice/by-name/persist			flags=display="Persist";backup=1;flashimg=1
-/cust			ext4		/dev/block/platform/bootdevice/by-name/cust			flags=display="Cust"
-/cust_image		emmc		/dev/block/platform/bootdevice/by-name/cust			flags=display="Cust";backup=1;flashimg=1
+/mnt/vendor/protect_f		ext4		/dev/block/platform/bootdevice/by-name/protect1			flags=backup=1
+/mnt/vendor/protect_s		ext4		/dev/block/platform/bootdevice/by-name/protect2			flags=backup=1
+/mnt/vendor/nvdata			ext4		/dev/block/platform/bootdevice/by-name/nvdata			flags=backup=1
+/mnt/vendor/nvcfg			ext4		/dev/block/platform/bootdevice/by-name/nvcfg			flags=backup=1
+/mnt/vendor/persist		ext4		/dev/block/platform/bootdevice/by-name/persist			flags=display="Persist"
+/mnt/vendor/persist_image		emmc		/dev/block/platform/bootdevice/by-name/persist			flags=display="Persist";backup=1;flashimg=1
 /persistent		emmc		/dev/block/platform/bootdevice/by-name/frp	
 /nvram			emmc		/dev/block/platform/bootdevice/by-name/nvram			flags=backup=1;display="NVRAM"
 /proinfo		emmc		/dev/block/platform/bootdevice/by-name/proinfo		
